@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+// import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+// import API from "../../utils/API";
+// import { Link } from "react-router-dom";
+// import { Col, Row, Container } from "../../components/Grid";
+// import { List, ListItem } from "../../components/List";
+// import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Articles extends Component {
   constructor() {
@@ -15,11 +15,11 @@ class Articles extends Component {
     };
  }
 
-  state = {
-    articles: [],
-    title: "",
-    author: ""
-  };
+  // state = {
+  //   articles: [],
+  //   title: "",
+  //   author: ""
+  // };
 
   componentDidMount() {
 
@@ -27,9 +27,11 @@ class Articles extends Component {
     .then(results => {
       return results.json();
     }).then(data => {
+      console.log(data);
       let articles = data.results.map((article) => {
+        console.log(article);
         return(
-          <div key={article.results}>
+          <div>
             <h2 key={article.title} />
             <h4 key={article.author} />
           </div>
@@ -41,47 +43,47 @@ class Articles extends Component {
     // this.loadArticles();
   }
 
-  loadArticles = () => {
-    API.getArticles()
-      .then(res => this.setState({ articles: res.data, title: "", author: "" })
-      )
-      .catch(err => console.log(err));
-  };
+  // loadArticles = () => {
+  //   API.getArticles()
+  //     .then(res => this.setState({ articles: res.data, title: "", author: "" })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
-  deleteArticle = id => {
-    API.deleteArticle(id)
-      .then(res => this.loadArticles())
-      .catch(err => console.log(err));
-  };
+  // deleteArticle = id => {
+  //   API.deleteArticle(id)
+  //     .then(res => this.loadArticles())
+  //     .catch(err => console.log(err));
+  // };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveArticle({
-        title: this.state.title,
-        author: this.state.author
-      })
-        .then(res => this.loadArticles())
-        .catch(err => console.log(err));
-    }
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   if (this.state.title && this.state.author) {
+  //     API.saveArticle({
+  //       title: this.state.title,
+  //       author: this.state.author
+  //     })
+  //       .then(res => this.loadArticles())
+  //       .catch(err => console.log(err));
+  //   }
+  // };
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
+      <div>
+           {/* <Row>
+          /* <Col size="md-6"> */
+            /* <Jumbotron>
               <h1>Articles</h1>
-            </Jumbotron>
-            <form>
+            </Jumbotron> */
+            /* <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -100,13 +102,20 @@ class Articles extends Component {
               >
                 Submit Article
               </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+            </form> */
+          /* </Col> */
+          /* <Col size="md-6 sm-12"> */}
             <Jumbotron>
               <h1>Articles List</h1>
             </Jumbotron>
-            {this.state.articles.length ? (
+
+            <div className="container2">
+            <div className="container1">
+            {this.state.articles}
+            </div>
+            </div>
+
+            {/* /* {this.state.articles.length ? (
               <List>
                 {this.state.articles.map(article => (
                   <ListItem key={article._id}>
@@ -121,10 +130,10 @@ class Articles extends Component {
               </List>
             ) : (
               <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-      </Container>
+            )} */
+          /* </Col>
+        </Row> */}
+    </div> 
     );
   }
 }

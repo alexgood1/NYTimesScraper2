@@ -8,6 +8,13 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Articles extends Component {
+  constructor() {
+    super();
+    this.state= {
+      articles: []
+    };
+ }
+
   state = {
     articles: [],
     title: "",
@@ -15,7 +22,23 @@ class Articles extends Component {
   };
 
   componentDidMount() {
-    this.loadArticles();
+
+    fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key8a157db08bd34988b2104282b0c41690')
+    .then(results => {
+      return results.json();
+    }).then(data => {
+      let articles = data.results.map((article) => {
+        return(
+          <div key={article.results}>
+            <h2 key={article.title} />
+            <h4 key={article.author} />
+          </div>
+        )
+      })
+      this.setState({articles: articles});
+      console.log("state", this.state.articles);
+    })
+    // this.loadArticles();
   }
 
   loadArticles = () => {

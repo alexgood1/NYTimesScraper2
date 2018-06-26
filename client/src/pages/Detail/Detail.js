@@ -6,10 +6,10 @@ import API from "../../utils/API";
 
 class Detail extends Component {
   state = {
-    book: {}
+    article: {}
   };
   // Add code to get the book with an _id equal to the id in the route param
-  // e.g. http://localhost:3000/books/:id
+  // e.g. http://localhost:3000/articles/:id
   // The book id for this route can be accessed using this.props.match.params.id
 
   render() {
@@ -19,17 +19,9 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.book.title} by {this.state.book.author}
+                {this.state.article.title} by {this.state.article.author}
               </h1>
             </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
-              <p>{this.state.book.synopsis}</p>
-            </article>
           </Col>
         </Row>
         <Row>

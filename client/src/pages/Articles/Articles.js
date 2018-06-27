@@ -29,13 +29,13 @@ class Articles extends Component {
     }).then(data => {
       console.log(data);
       let articles = data.results.map((article) => {
-        console.log(articles);
+        console.log(article);
         return(
           <div key={article.updated_date}>
-            <h3>{article.title}</h3>
-            <h4>{article.byline}</h4>
+            <p key={article.title}/>
+            <p key={article.byline}/>
           </div>
-        )
+        );
       })
       console.log(articles);
       this.setState({articles: articles});

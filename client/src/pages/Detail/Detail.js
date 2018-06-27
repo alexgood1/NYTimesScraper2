@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
+import { List, ListItem } from "../../components/List";
+import DeleteBtn from "../../components/DeleteBtn";
+// import API from "../../utils/API";
 
 class Detail extends Component {
   state = {
@@ -19,14 +21,34 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.article.title} by {this.state.article.author}
+                Saved Articles
               </h1>
             </Jumbotron>
           </Col>
         </Row>
+        {/* <Row>
+        <Col size="md-12">
+              {this.state.articles.length ? (
+              <List>
+                {this.state.articles.map(article => (
+                <ListItem key={article.}>
+                    <Link to={"/articles/" + article._id}>
+                      <strong>
+                        {article.title} by {article.author}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+              </Col>
+          </Row> */}
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to All Articles</Link>
           </Col>
         </Row>
       </Container>

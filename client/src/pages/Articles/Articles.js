@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
-// import API from "../../utils/API";
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
-// import { Input, TextArea, FormBtn } from "../../components/Form";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../../components/Grid";
+import { List, ListItem } from "../../components/List";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Articles extends Component {
   constructor() {
@@ -64,27 +64,24 @@ class Articles extends Component {
   //   });
   // };
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.title && this.state.author) {
-  //     API.saveArticle({
-  //       title: this.state.title,
-  //       author: this.state.author
-  //     })
-  //       .then(res => this.loadArticles())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.author) {
+      API.saveArticle({
+        title: this.state.title,
+        author: this.state.author
+      })
+        .then(res => this.loadArticles())
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     return (
       <div>
-           {/* <Row>
-          /* <Col size="md-6"> */
-            /* <Jumbotron>
-              <h1>Articles</h1>
-            </Jumbotron> */
-            /* <form>
+           <Row>
+          <Col size="md-12"> 
+            <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -103,11 +100,12 @@ class Articles extends Component {
               >
                 Submit Article
               </FormBtn>
-            </form> */
-          /* </Col> */
-          /* <Col size="md-6 sm-12"> */}
+            </form> 
+          </Col> 
+          </Row>
+          {/* <Col size="md-6 sm-12"> */}
             <Jumbotron>
-              <h1>Articles List</h1>
+              <h1>Articles Results</h1>
             </Jumbotron>
 
             <div className="container2">
@@ -131,9 +129,6 @@ class Articles extends Component {
               </List>
             ) : (
               <h3>No Results to Display</h3>
-            )} */}
-
-          {/* </Col>
         </Row> */}
     </div> 
     );

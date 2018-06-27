@@ -114,23 +114,21 @@ class Articles extends Component {
             </div>
             </div>
 
-            {/* /* {this.state.articles.length ? (
+            {/* {this.state.articles.length ? (
               <List>
                 {this.state.articles.map(article => (
-                  <ListItem key={article._id}>
+                  // <ListItem key={article._id}>
                     <Link to={"/articles/" + article._id}>
                       <strong>
                         {article.title} by {article.author}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
-                  </ListItem>
+                  // </ListItem>
                 ))}
               </List>
             ) : (
               <h3>No Results to Display</h3>
-            )} */
-          /* </Col>}
         </Row> */}
     </div> 
     );

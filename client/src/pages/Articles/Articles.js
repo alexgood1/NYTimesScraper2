@@ -10,8 +10,8 @@ import Jumbotron from "../../components/Jumbotron";
 class Articles extends Component {
   constructor() {
     super();
-    this.state= {
-      articles: []
+    this.state = {
+      articles: [],
     };
  }
 
@@ -23,20 +23,21 @@ class Articles extends Component {
 
   componentDidMount() {
 
-    fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key8a157db08bd34988b2104282b0c41690')
+    fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=8a157db08bd34988b2104282b0c41690')
     .then(results => {
       return results.json();
     }).then(data => {
       console.log(data);
       let articles = data.results.map((article) => {
-        console.log(article);
+        console.log(articles);
         return(
-          <div>
-            <h2 key={article.title} />
-            <h4 key={article.author} />
+          <div key={article.updated_date}>
+            <div key={article.title}></div>
+            <h4 key={article.byline}></h4>
           </div>
         )
       })
+      console.log(articles);
       this.setState({articles: articles});
       console.log("state", this.state.articles);
     })

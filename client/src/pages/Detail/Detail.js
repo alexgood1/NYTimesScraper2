@@ -19,14 +19,14 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.article.title} by {this.state.article.author}
+                Saved Articles
               </h1>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to All Articles</Link>
           </Col>
         </Row>
       </Container>

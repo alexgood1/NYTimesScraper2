@@ -32,8 +32,8 @@ class Articles extends Component {
         console.log(articles);
         return(
           <div key={article.updated_date}>
-            <div key={article.title}></div>
-            <h4 key={article.byline}></h4>
+            <h3>{article.title}</h3>
+            <h4>{article.byline}</h4>
           </div>
         )
       })

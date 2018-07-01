@@ -1,5 +1,5 @@
 import React from 'react';
-importSearchFormLabel from './SearchFormLabel/SearchFormLabel';
+import SearchFormLabel from './SearchFormLabel/SearchFormLabel';
 import SearchButton from './SearchButton/SearchButton';
 
 const SearchForm = props => {

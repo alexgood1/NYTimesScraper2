@@ -1,12 +1,18 @@
 import React from "react";
 import "./List.css";
+import Button from "./Button/Button";
 
-export const List = ({ children }) => {
-  return (
-    <div className="list-overflow-container">
-      <ul className="list-group">
-        {children}
-      </ul>
-    </div>
-  );
-};
+const list = (props) => (
+  <div className="well" id={props.articleId}>
+  <h3 className="articleHeadline">
+    <strong>{props.headline}</strong>
+  </h3>
+  <h5> Author: {props.author} </h5>
+  <h5> Date: {props.date} </h5>
+  <button className="btn btn-primary" style={styles.button}><a style={styles.link} href={props.URL} target="_blank">Article
+  </a></button>
+  <Button title={props.title} clicked={(event) => props.action(event, props.articleId)} />
+  </div>
+);
+
+export default list;

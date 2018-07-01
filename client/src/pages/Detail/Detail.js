@@ -1,58 +1,46 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
-import { List, ListItem } from "../../components/List";
-import DeleteBtn from "../../components/DeleteBtn";
-// import API from "../../utils/API";
+import API from "../../utils/API";
+import Panel from "../../components/UI/Panel/Panel";
+import List from "../../components/List/List"
 
 class Detail extends Component {
   state = {
-    article: {}
+    savedArticles: []
   };
-  // Add code to get the book with an _id equal to the id in the route param
-  // e.g. http://localhost:3000/articles/:id
-  // The book id for this route can be accessed using this.props.match.params.id
+  
+  componentDidMount(){
+    this.getArticlesHandler();
+  }
+
+  getArticlesHandler(){
+    API.getArticles()
+    .then(res => this.setState({savedArticles: res.data}))
+    .catch(err => console.log(err));
+  }
+
+  deleteArticleHandler = (event, id) => {
+    API.deleteArticle(id)
+    .then(res => this.getArticlesHandler())
+    .catch(err => console.log(err));
+  }
 
   render() {
+    let saved = <p> Currently, no saved articles!</p>
+
+    if(this.state.savedArticles.length > 0){
+      saved = this.state.savedArticles.map((article, index) => {
+        return <List key={article._id} articleId={article._id} headline={article.title} author={article.author} date={article.dateOfArticle} URL={article.URL} action={this.deleteArticleHandler} title="Delete"/>
+      });
+    }
+
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                Saved Articles
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        {/* <Row>
-        <Col size="md-12">
-              {this.state.articles.length ? (
-              <List>
-                {this.state.articles.map(article => (
-                <ListItem key={article.}>
-                    <Link to={"/articles/" + article._id}>
-                      <strong>
-                        {article.title} by {article.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-              </Col>
-          </Row> */}
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to All Articles</Link>
-          </Col>
-        </Row>
-      </Container>
-    );
+      <Container>
+        <Panel title="Saved Articles">
+        {saved}
+        </Panel>
+        </Container>
+    ) 
   }
 }
 

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
-import Panel from "../../components/UI/Panel/Panel";
+import Panel from "../../components/UI/Panel";
 import List from "../../components/List/List"
 import nyt from "../../utils/nyt/API";
 import API from "../../utils/api/API"
-import { Col, Row, Container } from "../../components/Grid";
+import Container from "../../components/Container/Container";
 
 class Articles extends Component {
   state = {
@@ -18,12 +18,14 @@ class Articles extends Component {
     error:""
   }
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  handleInputChange = ( event, id ) => {
+    const labelIndex = this.state.labels.findIndex(label => label.id === id);
+    const label = { ...this.state.labels[labelIndex] };
+    label.val = event.target.value;
+    const labels = [ ...this.state.labels ];
+    labels[labelIndex] = label;
+    this.setState({ labels: labels });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -45,6 +47,7 @@ class Articles extends Component {
     event.preventDefault();
     const articleIndex = this.state.results.findIndex(result => result._id === id);
     const article = { ...this.state.results[articleIndex]};
+    console.log(article);
     API.saveArticle({
       title: article.headline.main,
       author: article.souce,
@@ -52,20 +55,20 @@ class Articles extends Component {
       URL: article.web_url
     })
     .then(res => alert('Article saved!'))
-    .catche(err => console.log(err));
+    .catch(err => console.log(err));
   }
 
   render() {
     let articlesResults = "Please enter all fields."
     if(this.state.showResults){
       articlesResults = this.state.results.map((article, index) =>{
-        return <List key={article._id} headline={article.headline.main} author={article.source} date={article.pub_date} URL={article.web_url} action={this.handleArticleSaved} title="Save" />
+        return <List key={article._id} articleId={article._id} headline={article.headline.main} author={article.source} date={article.pub_date} URL={article.web_url} action={this.handleArticleSaved} title="Save" />
       });
     }
     return (
       <Container>
         <Panel title="Articles">
-        <Search Form submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+        <SearchForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
         </Panel>
         <Panel title="Top Results">{articlesResults}</Panel>
         </Container>

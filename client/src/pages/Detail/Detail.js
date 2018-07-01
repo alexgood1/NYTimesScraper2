@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import API from "../../utils/API";
-import Panel from "../../components/UI/Panel/Panel";
+import Container from "../../components/Container/Container";
+import API from "../../utils/api/API";
+import Panel from "../../components/UI/Panel";
 import List from "../../components/List/List"
 
 class Detail extends Component {

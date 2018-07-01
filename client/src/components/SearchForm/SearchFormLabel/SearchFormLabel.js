@@ -1,6 +1,5 @@
 import React from 'react';
-
-const aux = (props) => props.children;
+import Aux from '../../../hoc:Auxiliary/Auxiliary';
 
 const SearchFormLabel = (props) => (
     <Aux>

@@ -50,7 +50,7 @@ class Articles extends Component {
     console.log(article);
     API.saveArticle({
       title: article.headline.main,
-      author: article.souce,
+      author: article.source,
       date: article.pub_date,
       URL: article.web_url
     })

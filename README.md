@@ -9,7 +9,7 @@ If you would like to run this from your command line, then you would need to hav
 
 If you do so, then it is as simple as running any other node application, following the yarn start pattern common for all react apps.
 
-You can alsp run the app from your browser on the heroku version [here](https://apologetic-drake-56624.herokuapp.com/)
+You can also run the app from your browser on the heroku version [here](https://apologetic-drake-56624.herokuapp.com/)
 
 ## Built With 
 * HTML & CSS

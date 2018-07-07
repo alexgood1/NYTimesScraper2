@@ -36,27 +36,23 @@ Junior
 
 
 
-### NYT-REACT Landing Page
+                                                NYT-REACT Landing Page
 
 ![nyt-react](https://user-images.githubusercontent.com/35353393/42412883-c1bf4bd0-81c9-11e8-8433-d5c4f3fc9a4a.jpeg)
 
 
 
-
-### SEARCH RESULTS
+                                                    SEARCH RESULTS
 
 ![nty-react-results](https://user-images.githubusercontent.com/35353393/42412880-c17cfcc6-81c9-11e8-8546-94760add1cd4.jpeg)
 
 
 
-
-
-### NYT-REACT SAVED ARTICLES LIST - LINKS REMAIN SAVED (UNTIL MANUAL DELETE) UPON EXITING AND RETURNING TO PAGE 
+      NYT-REACT SAVED ARTICLES LIST - LINKS REMAIN SAVED (UNTIL MANUAL DELETE) UPON EXITING AND RETURNING TO PAGE 
 
 ![nyt-react-saved](https://user-images.githubusercontent.com/35353393/42412882-c1ab220e-81c9-11e8-9221-36e6187dfacf.jpeg)
 
 
 
-
-### NYT-REACT - NYTIMES ORIGINAL ARTICLE 
+                                          NYT-REACT - NYTIMES ORIGINAL ARTICLE 
 ![nyt-react-saved-art](https://user-images.githubusercontent.com/35353393/42412881-c19373d4-81c9-11e8-9de0-31ffc6787d2b.jpeg)

@@ -27,8 +27,8 @@ You can alsp run the app from your browser on the heroku version [here](https://
 * [axios](https://www.npmjs.com/package/axios)
 * [morgan](https://www.npmjs.com/package/morgan)
 
-## Author 
+## Authors
 [Roberto Baldizon](https://github.com/b0bbybaldi)
-Connor 
-Alex 
+[Alexandra Goodwin] (https://github.com/alexgood1)
+Connor  
 Junior

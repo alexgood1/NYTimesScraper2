@@ -29,6 +29,6 @@ You can alsp run the app from your browser on the heroku version [here](https://
 
 ## Authors
 [Roberto Baldizon](https://github.com/b0bbybaldi)
-[Alexandra Goodwin] (https://github.com/alexgood1)
+[Alexandra Goodwin](https://github.com/alexgood1)
 Connor  
 Junior

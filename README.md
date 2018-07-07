@@ -32,3 +32,6 @@ You can also run the app from your browser on the heroku version [here](https://
 [Alexandra Goodwin](https://github.com/alexgood1)
 Connor  
 Junior
+
+
+https://alexgood1.github.io/NYTimesScraper2

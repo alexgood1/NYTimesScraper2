@@ -1,15 +1,15 @@
 # NY Times Article Finder
 
-A fullstack web app that ontains articles from the verge, users can specify topics and date ranges. 
+A fullstack web app that contains articles from the New York Times. Users can specify topics and date ranges. 
 
-React was for display and mongoDB to handle server database. 
+React is used for display and mongoDB for handling the server database. 
 
 ### Running the App
-If you would like to run this from your command line, then you would need to have react, and mongoDB installed in your computer.
+If you would like to run this from your command line, then you would need to have react and mongoDB installed on your computer.
 
-If you do so, then it is as simple as running any other node application, following the yarn start pattern common for all react apps.
+This is as simple as running any other node application following the yarn start pattern common for all react apps.
 
-You can also run the app from your browser on the heroku version [here](https://apologetic-drake-56624.herokuapp.com/)
+You can also run the app from your browser with the heroku version [here](https://apologetic-drake-56624.herokuapp.com/)
 
 ## Built With 
 * HTML & CSS
